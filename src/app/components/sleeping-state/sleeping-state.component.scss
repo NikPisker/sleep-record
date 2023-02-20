@@ -190,23 +190,27 @@
   }
 }
 
-@include donut-chart('chart1', 20, 18vw, 2vw, 2s, #d9d8df, #fff, #f9922e);
+@include donut-chart('chart1', 20, 18vw, 2vw, 2s, #d9d8df, #fff, linear-gradient(180deg, rgba(230,33,21,1) 0%, rgba(237,147,33,1) 43%, rgba(252,176,69,1) 100%));
 
-@include donut-chart('chart2', 50, 18vw, 2vw, 3s, #d9d8df, #fff, #fc45cb);
+@include donut-chart('chart2', 50, 18vw, 2vw, 1s, #d9d8df, #fff, linear-gradient(90deg, rgba(167,54,227,1) 0%, rgba(159,48,249,1) 35%, rgba(132,39,251,1) 100%));
 
-@include donut-chart('chart3', 30, 18vw, 2vw, 1.5s, #d9d8df, #fff, #2398d2);
+@include donut-chart('chart3', 30, 18vw, 2vw, 1.5s, #d9d8df, #fff, linear-gradient(90deg, rgba(59,117,221,1) 10%, rgba(53,99,225,1) 35%, rgba(51,58,196,1) 70%));
 
 
 ::ng-deep {
   .dark-theme {
-    @include donut-chart('chart1', 20, 18vw, 2vw, 2s, #383c59, #fff, #f9922e);
+    @include donut-chart('chart1', 20, 18vw, 2vw, 2s, #383c59, #fff, linear-gradient(180deg, rgba(230,33,21,1) 0%, rgba(237,147,33,1) 43%, rgba(252,176,69,1) 100%));
 
-    @include donut-chart('chart2', 50, 18vw, 2vw, 3s, #383c59, #fff, #fc45cb);
+    @include donut-chart('chart2', 50, 18vw, 2vw, 1s, #383c59, #fff, linear-gradient(90deg, rgba(220,68,246,1) 0%, rgba(197,61,245,1) 35%, rgba(167,54,227,1) 100%));
 
-    @include donut-chart('chart3', 30, 18vw, 2vw, 1.5s, #383c59, #fff, #2398d2);
+    @include donut-chart('chart3', 30, 18vw, 2vw, 1.5s, #383c59, #fff, linear-gradient(90deg, rgba(59,117,221,1) 10%, rgba(53,99,225,1) 35%, rgba(51,58,196,1) 70%));
 
     .donut-chart .quad.top {
       background: #383c59 !important;
     }
   }
+}
+
+.donut-chart.chart2 .quad.two {
+  background: linear-gradient(90deg, rgba(220,68,246,1) 0, rgba(197,61,245,1) 35%, rgba(167,54,227,1) 100%) !important;
 }
