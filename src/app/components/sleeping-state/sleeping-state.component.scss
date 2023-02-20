@@ -1,5 +1,4 @@
 .wrapper {
-  padding: 0 2rem;
   .flex-row {
     display: flex;
     flex-direction: row;
@@ -191,8 +190,23 @@
   }
 }
 
-@include donut-chart('chart1', 20, 15vw, 2vw, 2s, #e1e1e1, #fff, #f9922e);
+@include donut-chart('chart1', 20, 18vw, 2vw, 2s, #d9d8df, #fff, #f9922e);
 
-@include donut-chart('chart2', 50, 15vw, 2vw, 3s, #e1e1e1, #fff, #fc45cb);
+@include donut-chart('chart2', 50, 18vw, 2vw, 3s, #d9d8df, #fff, #fc45cb);
 
-@include donut-chart('chart3', 30, 15vw, 2vw, 1.5s, #e1e1e1, #fff, #2398d2);
+@include donut-chart('chart3', 30, 18vw, 2vw, 1.5s, #d9d8df, #fff, #2398d2);
+
+
+::ng-deep {
+  .dark-theme {
+    @include donut-chart('chart1', 20, 18vw, 2vw, 2s, #383c59, #fff, #f9922e);
+
+    @include donut-chart('chart2', 50, 18vw, 2vw, 3s, #383c59, #fff, #fc45cb);
+
+    @include donut-chart('chart3', 30, 18vw, 2vw, 1.5s, #383c59, #fff, #2398d2);
+
+    .donut-chart .quad.top {
+      background: #383c59 !important;
+    }
+  }
+}

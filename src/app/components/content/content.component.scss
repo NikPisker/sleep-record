@@ -5,7 +5,7 @@
   .chart-info {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 2rem 0;
 
     &__cards {
       display: flex;
@@ -15,7 +15,7 @@
 
       .mdc-card {
         flex: 1;
-        max-width: calc(50% - 1rem);
+        max-width: calc(50% - 0.5rem);
 
         .card-content {
           display: flex;

@@ -1,6 +1,6 @@
 $default-delay: .3s;
 $bars: 7;
-$graph-height: 250px;
+$graph-height: 150px;
 
 @mixin bar-animation($time, $dimension) {
   visibility: hidden;
@@ -76,7 +76,7 @@ $graph-height: 250px;
 }
 
 #column-chart {
-  width: 90%;
+  width: 100%;
   position: relative;
   margin: 3rem auto 0;
   padding-top: 1rem;
@@ -84,7 +84,7 @@ $graph-height: 250px;
     box-sizing: border-box;
   }
   .graph {
-    height: 280px;
+    height: 185px;
     position: relative;
   }
   .bars {
@@ -112,8 +112,8 @@ $graph-height: 250px;
       height: 0;
       position: absolute;
       text-align: center;
-      width: 50%;
-      left: 25%;
+      width: 26%;
+      left: 38%;
     }
     @for $i from 1 through 7 {
       .bar-#{$i} {
