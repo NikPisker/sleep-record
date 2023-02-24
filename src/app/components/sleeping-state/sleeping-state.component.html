@@ -1,50 +1,112 @@
+<!--<div class="wrapper">-->
+<!--  <h3>Sleeping State</h3>-->
+<!--  <div class="flex-row">-->
+<!--    <div class="card">-->
+<!--      <div class="donut-chart chart1">-->
+<!--        <div class="quad one"></div>-->
+<!--        <div class="quad two"></div>-->
+<!--        <div class="quad three"></div>-->
+<!--        <div class="quad four"></div>-->
+<!--        <div class="quad top"></div>-->
+<!--        <div class="chart-center">-->
+<!--          <div class="chart-content"></div>-->
+<!--          <div class="percent-content"></div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="title">Awake</div>-->
+<!--    </div>-->
+
+<!--    <div class="card">-->
+<!--      <div class="donut-chart chart2">-->
+<!--        <div class="quad one"></div>-->
+<!--        <div class="quad two"></div>-->
+<!--        <div class="quad three"></div>-->
+<!--        <div class="quad four"></div>-->
+<!--        <div class="quad top"></div>-->
+<!--        <div class="chart-center">-->
+<!--          <div class="chart-content"></div>-->
+<!--          <div class="percent-content"></div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="title">Light</div>-->
+<!--    </div>-->
+
+<!--    <div class="card">-->
+<!--      <div class="donut-chart chart3">-->
+<!--        <div class="quad one"></div>-->
+<!--        <div class="quad two"></div>-->
+<!--        <div class="quad three"></div>-->
+<!--        <div class="quad four"></div>-->
+<!--        <div class="quad top"></div>-->
+<!--        <div class="chart-center">-->
+<!--          <div class="chart-content"></div>-->
+<!--          <div class="percent-content"></div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="title">Deep</div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<h3>Sleeping State</h3>
 <div class="wrapper">
-  <h3>Sleeping State</h3>
-  <div class="flex-row">
-    <div class="card">
-      <div class="donut-chart chart1">
-        <div class="quad one"></div>
-        <div class="quad two"></div>
-        <div class="quad three"></div>
-        <div class="quad four"></div>
-        <div class="quad top"></div>
-        <div class="chart-center">
-          <div class="chart-content"></div>
-          <div class="percent-content"></div>
-        </div>
-      </div>
-      <div class="title">Awake</div>
-    </div>
+  <div class="donut">
+    Awake
+    <svg width="100%" height="100%" viewBox="0 0 40 40" class="donut">
+      <defs>
+        <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="rgba(252,176,69,1)" />
+          <stop offset="100%" stop-color="rgba(230,33,21,1)" />
+        </linearGradient>
+        <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="rgb(252, 69, 203)" />
+          <stop offset="100%" stop-color="rgb(137, 34, 190)" />
+        </linearGradient>
+        <linearGradient id="gradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#84a9eb" />
+          <stop offset="100%" stop-color="#0813f0" />
+        </linearGradient>
+      </defs>
+      <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="transparent"></circle>
+      <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" ></circle>
+      <circle class="donut-segment" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" attr.stroke-dasharray="{{ donutsData[0] }}, {{ 100 - donutsData[0] }}" stroke-dashoffset="25" stroke="url(#gradient1)"></circle>
+      <g class="donut-text" fill="url(#gradient1)">
 
-    <div class="card">
-      <div class="donut-chart chart2">
-        <div class="quad one"></div>
-        <div class="quad two"></div>
-        <div class="quad three"></div>
-        <div class="quad four"></div>
-        <div class="quad top"></div>
-        <div class="chart-center">
-          <div class="chart-content"></div>
-          <div class="percent-content"></div>
-        </div>
-      </div>
-      <div class="title">Light</div>
-    </div>
+        <text y="50%" transform="translate(0, 2)">
+          <tspan x="50%" text-anchor="middle" class="donut-percent">{{donutsData[0]}}</tspan>
+          <tspan [attr.x]="donutsData[0] < 10 ? '63%' : (donutsData[0] > 10 && donutsData[0] < 100 ? '68%' : '73%')" text-anchor="middle" class="donut-percent">%</tspan>
+        </text>
+      </g>
+    </svg>
+  </div>
+  <div class="donut">
+    Light
+    <svg width="100%" height="100%" viewBox="0 0 40 40" class="donut">
+      <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="transparent"></circle>
+      <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" ></circle>
+      <circle class="donut-segment" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" attr.stroke-dasharray="{{ donutsData[1] }}, {{ 100 - donutsData[1] }}" stroke-dashoffset="25" stroke="url(#gradient2)"></circle>
+      <g class="donut-text" fill="url(#gradient2)">
 
-    <div class="card">
-      <div class="donut-chart chart3">
-        <div class="quad one"></div>
-        <div class="quad two"></div>
-        <div class="quad three"></div>
-        <div class="quad four"></div>
-        <div class="quad top"></div>
-        <div class="chart-center">
-          <div class="chart-content"></div>
-          <div class="percent-content"></div>
-        </div>
-      </div>
-      <div class="title">Deep</div>
-    </div>
+        <text y="50%" transform="translate(0, 2)">
+          <tspan x="50%" text-anchor="middle" class="donut-percent">{{ donutsData[1] }}</tspan>
+          <tspan [attr.x]="donutsData[1] < 10 ? '63%' : (donutsData[1] > 10 && donutsData[1] < 100 ? '68%' : '73%')" text-anchor="middle" class="donut-percent">%</tspan>
+        </text>
+      </g>
+    </svg>
+  </div>
+  <div class="donut">
+    Deep
+    <svg width="100%" height="100%" viewBox="0 0 40 40" class="donut">
+      <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="transparent"></circle>
+      <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" ></circle>
+
+      <circle class="donut-segment" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" attr.stroke-dasharray="{{ donutsData[2] }}, {{ 100 - donutsData[2] }}" stroke-dashoffset="25" stroke="url(#gradient3)"></circle>
+      <g class="donut-text" fill="url(#gradient3)">
+
+        <text y="50%" transform="translate(0, 2)">
+          <tspan x="50%" text-anchor="middle" class="donut-percent">{{ donutsData[2] }}</tspan>
+          <tspan [attr.x]="donutsData[2] < 10 ? '63%' : (donutsData[2] > 10 && donutsData[2] < 100 ? '68%' : '73%')" text-anchor="middle" class="donut-percent">%</tspan>
+        </text>
+      </g>
+    </svg>
   </div>
 </div>
-
